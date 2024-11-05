@@ -67,7 +67,9 @@ class _LoginPageState extends State<LoginPage> {
                               isLoading = false;
                             });
                             AwesomeDialog(
-                              btnCancelOnPress: () {},
+                              btnCancelOnPress: () {
+                                setState(() {});
+                              },
                               context: context,
                               dialogType: DialogType.warning,
                               animType: AnimType.rightSlide,
