@@ -73,8 +73,14 @@ class _LoginPageState extends State<LoginPage> {
                               animType: AnimType.rightSlide,
                               title: 'verify your email',
                             ).show();
-                            await checkEmailVerification(
-                                FirebaseAuth.instance.currentUser!, context);
+                            if (FirebaseAuth
+                                .instance.currentUser!.emailVerified) {
+                              Navigator.pushReplacementNamed(
+                                  context, HomePage.id);
+                            } else {
+                              await checkEmailVerification(
+                                  FirebaseAuth.instance.currentUser!, context);
+                            }
                           } on FirebaseAuthException catch (e) {
                             switch (e.code) {
                               case 'user-not-found':
