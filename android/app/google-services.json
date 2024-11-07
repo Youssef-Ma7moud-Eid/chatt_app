@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "581450668907",
     "project_id": "chatt-app-853a3",
-    "storage_bucket": "chatt-app-853a3.appspot.com"
+    "storage_bucket": "chatt-app-853a3.firebasestorage.app"
   },
   "client": [
     {
@@ -12,7 +12,20 @@
           "package_name": "com.example.chatt_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "581450668907-khhh19islo9kss69im85bn722e2h08mh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatt_app",
+            "certificate_hash": "71831054e50b75164fb9b41fd57fd2fe3e524bca"
+          }
+        },
+        {
+          "client_id": "581450668907-fi2l6c3t734ih0m852382sl3901sf817.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBIr--b_q4jTCUXIECETndBRtjp0wTeAuo"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "581450668907-fi2l6c3t734ih0m852382sl3901sf817.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "581450668907-1knu5ns7ors8u4os6v5244vinie5ecp1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.chattApp"
+              }
+            }
+          ]
         }
       }
     }

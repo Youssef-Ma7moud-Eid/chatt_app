@@ -46,7 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '581450668907',
     projectId: 'chatt-app-853a3',
     authDomain: 'chatt-app-853a3.firebaseapp.com',
-    storageBucket: 'chatt-app-853a3.appspot.com',
+    storageBucket: 'chatt-app-853a3.firebasestorage.app',
     measurementId: 'G-DHWYZYTFLY',
   );
 
@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
     appId: '1:581450668907:android:e3c0f623ca154bed500a2e',
     messagingSenderId: '581450668907',
     projectId: 'chatt-app-853a3',
-    storageBucket: 'chatt-app-853a3.appspot.com',
+    storageBucket: 'chatt-app-853a3.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -63,7 +63,9 @@ class DefaultFirebaseOptions {
     appId: '1:581450668907:ios:946f9375318d7f61500a2e',
     messagingSenderId: '581450668907',
     projectId: 'chatt-app-853a3',
-    storageBucket: 'chatt-app-853a3.appspot.com',
+    storageBucket: 'chatt-app-853a3.firebasestorage.app',
+    androidClientId: '581450668907-khhh19islo9kss69im85bn722e2h08mh.apps.googleusercontent.com',
+    iosClientId: '581450668907-1knu5ns7ors8u4os6v5244vinie5ecp1.apps.googleusercontent.com',
     iosBundleId: 'com.example.chattApp',
   );
 
@@ -72,7 +74,9 @@ class DefaultFirebaseOptions {
     appId: '1:581450668907:ios:946f9375318d7f61500a2e',
     messagingSenderId: '581450668907',
     projectId: 'chatt-app-853a3',
-    storageBucket: 'chatt-app-853a3.appspot.com',
+    storageBucket: 'chatt-app-853a3.firebasestorage.app',
+    androidClientId: '581450668907-khhh19islo9kss69im85bn722e2h08mh.apps.googleusercontent.com',
+    iosClientId: '581450668907-1knu5ns7ors8u4os6v5244vinie5ecp1.apps.googleusercontent.com',
     iosBundleId: 'com.example.chattApp',
   );
 
@@ -82,7 +86,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '581450668907',
     projectId: 'chatt-app-853a3',
     authDomain: 'chatt-app-853a3.firebaseapp.com',
-    storageBucket: 'chatt-app-853a3.appspot.com',
+    storageBucket: 'chatt-app-853a3.firebasestorage.app',
     measurementId: 'G-QWS4RW3LL4',
   );
+
 }

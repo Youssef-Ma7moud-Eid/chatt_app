@@ -1,15 +1,13 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:chatt_app/views/home_page.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:chatt_app/views/signup_page.dart';
 import 'package:chatt_app/widgets/accounts_login_widget.dart';
 import 'package:chatt_app/widgets/avatar_widget.dart';
-
 import 'package:chatt_app/widgets/buttom_widget.dart';
 import 'package:chatt_app/widgets/custom_appbar.dart';
 import 'package:chatt_app/widgets/login_in_accounts.dart';
 import 'package:chatt_app/widgets/text_fields_with_icons.dart';
-
 import 'package:chatt_app/widgets/text_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -133,17 +131,46 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
               const SizedBox(height: 15),
-              const LoginInAccounts(),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const CardAccount(child: Icon(Icons.facebook, size: 55)),
-                  CardAccount(
-                    child: Image.asset("assets/4.png", height: 50),
+              Padding(
+                padding: const EdgeInsets.all(9),
+                child: MaterialButton(
+                  textColor: Colors.white,
+                  color: Colors.red[700],
+                  height: 55,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  const CardAccount(child: Icon(Icons.apple, size: 55)),
-                ],
+                  onPressed: () async {
+                    signInWithGoogle();
+
+                    AwesomeDialog(
+                            btnOkOnPress: () {
+                              Navigator.pushReplacementNamed(
+                                  context, HomePage.id);
+                            },
+                            context: context,
+                            dialogType: DialogType.success,
+                            animType: AnimType.rightSlide,
+                            title: 'Sucess',
+                            desc: "login succsseful")
+                        .show();
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const TextWidget(
+                        color: Colors.white,
+                        hinttext: " Login with Google   ",
+                        bold: true,
+                        size: 20,
+                      ),
+                      Image.asset(
+                        'assets/4.png',
+                        height: 29,
+                      ),
+                    ],
+                  ),
+                ),
               ),
               const SizedBox(height: 20),
               Row(
@@ -187,4 +214,22 @@ Future<void> checkEmailVerification(User user, BuildContext context) async {
 
     await Future.delayed(const Duration(seconds: 5)); // Check every 5 seconds
   }
+}
+
+Future<UserCredential> signInWithGoogle() async {
+  // Trigger the authentication flow
+  final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+  // Obtain the auth details from the request
+  final GoogleSignInAuthentication? googleAuth =
+      await googleUser?.authentication;
+
+  // Create a new credential
+  final credential = GoogleAuthProvider.credential(
+    accessToken: googleAuth?.accessToken,
+    idToken: googleAuth?.idToken,
+  );
+
+  // Once signed in, return the UserCredential
+  return await FirebaseAuth.instance.signInWithCredential(credential);
 }
