@@ -2,11 +2,9 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:chatt_app/views/home_page.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:chatt_app/views/signup_page.dart';
-import 'package:chatt_app/widgets/accounts_login_widget.dart';
 import 'package:chatt_app/widgets/avatar_widget.dart';
 import 'package:chatt_app/widgets/buttom_widget.dart';
 import 'package:chatt_app/widgets/custom_appbar.dart';
-import 'package:chatt_app/widgets/login_in_accounts.dart';
 import 'package:chatt_app/widgets/text_fields_with_icons.dart';
 import 'package:chatt_app/widgets/text_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -212,7 +210,7 @@ Future<void> checkEmailVerification(User user, BuildContext context) async {
       break; // Exit the loop
     }
 
-    await Future.delayed(const Duration(seconds: 5)); // Check every 5 seconds
+    await Future.delayed(const Duration(seconds: 2)); // Check every 5 seconds
   }
 }
 

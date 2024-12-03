@@ -11,6 +11,9 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // String emailpattern =
+  //     r"^(?=.{1,256})(?=.{1,64}@.{1,255}$)(?=.{1,64}@.+\..+)(?:(?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+[A-Za-z]{2,}$";
+  // RegExp regExp = new RegExp(emailpattern);
   runApp(const MyApp());
 }
 
@@ -40,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         SignupPage.id: (context) => SignupPage(),
         LoginPage.id: (context) => const LoginPage(),
-        HomePage.id: (context) => const HomePage(),
+        HomePage.id: (context) => HomePage(),
       },
       debugShowCheckedModeBanner: false,
       home: const LoginPage(),
