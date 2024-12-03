@@ -37,20 +37,21 @@ class _HomePageState extends State<HomePage> {
   // List of meal names corresponding to the images
   final List<String> mealNames = [
     "Mighty Zinger",
-    "Bzoka",
-    "Combo Meal",
-    "Combo Meal",
+    "MC Combo",
+    "Delicious Combo",
+    "Savory SS",
+    "Super SSS",
     "Grills Kilo",
-    "Pizza",
-    "Pizza",
-    "Koshary",
-    "Bzoka",
-    "Bzokka",
-    "Mabazokaa",
-    "ABd",
-    "Grills Kilo",
-    "Bsk",
-    "Combo Meal",
+    "Perfect P",
+    "KKers Delight",
+    "Koshary Special",
+    "Bzoka Treat",
+    "Bzokka Flavor",
+    "Mabzokaa Mix",
+    "ABd Special",
+    "Mystery Meal",
+    "Bsk Delight",
+    "MMN Feast",
   ];
 
   void _onItemTapped(int index) {
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                     double value = 1.0;
                     if (_controller.position.haveDimensions) {
                       value = _controller.page! - index;
-                      value = (1 - (value.abs() * 0.5)).clamp(0.0, 1.0);
+                      value = (1 - (value.abs() * 0.2)).clamp(0.0, 1.0);
                     }
                     return Padding(
                       padding: const EdgeInsets.all(2.0),
@@ -147,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                       const EdgeInsets.symmetric(horizontal: 2, vertical: 15),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Color.fromARGB(255, 247, 244, 244),
+                    color: const Color.fromARGB(255, 247, 244, 244),
                   ),
                   child: Column(
                     children: [

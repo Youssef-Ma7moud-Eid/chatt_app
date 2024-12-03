@@ -180,7 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushReplacementNamed(context, SignupPage.id);
+                      Navigator.pushNamed(context, SignupPage.id);
                     },
                     child: const TextWidget(
                       color: Colors.blue,

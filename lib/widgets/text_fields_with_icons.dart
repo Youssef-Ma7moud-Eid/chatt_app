@@ -1,3 +1,4 @@
+import 'package:chatt_app/views/forget_password.dart';
 import 'package:chatt_app/widgets/text_form_field.dart';
 import 'package:chatt_app/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,9 @@ class TextFields extends StatelessWidget {
         const SizedBox(height: 12),
         forget == true
             ? InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, ForgetPassword.id);
+                },
                 child: Align(
                   alignment: Alignment.topRight,
                   child: TextWidget(

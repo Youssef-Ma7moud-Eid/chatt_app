@@ -1,3 +1,5 @@
+import 'package:chatt_app/Intro_of_App/splash_screen.dart';
+import 'package:chatt_app/views/forget_password.dart';
 import 'package:chatt_app/views/home_page.dart';
 import 'package:chatt_app/views/login_page.dart';
 import 'package:chatt_app/views/signup_page.dart';
@@ -44,9 +46,10 @@ class _MyAppState extends State<MyApp> {
         SignupPage.id: (context) => SignupPage(),
         LoginPage.id: (context) => const LoginPage(),
         HomePage.id: (context) => HomePage(),
+        ForgetPassword.id: (context) => ForgetPassword(),
       },
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      home: SplashScreen(),
     );
   }
 }
