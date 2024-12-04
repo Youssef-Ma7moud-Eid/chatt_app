@@ -79,7 +79,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   try {
                     await FirebaseAuth.instance
                         .sendPasswordResetEmail(email: email);
-                    QuickAlert.show(
+                    await QuickAlert.show(
                       context: context,
                       type: QuickAlertType.info,
                       text: 'please check your email',

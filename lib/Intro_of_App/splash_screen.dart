@@ -1,3 +1,6 @@
+import 'package:chatt_app/views/login_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'onboarding_screen copy.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -11,11 +14,29 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 10), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => OnboardingScreen()),
-      );
+    initiate();
+  }
+
+  Future<void> initiate() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool? checkfirst = prefs.getBool('first');
+    Timer(Duration(seconds: 6), () {
+      if (checkfirst == null) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => OnboardingScreen()),
+        );
+        prefs.setBool('first', true);
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+      }
+    });
+
+    setState(() {
+      checkfirst = prefs.getBool('first');
     });
   }
 

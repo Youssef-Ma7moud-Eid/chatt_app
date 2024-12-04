@@ -1,7 +1,6 @@
 import 'package:chatt_app/views/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:chatt_app/views/signup_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -59,7 +58,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ? ElevatedButton(
                         onPressed: () {
                           // Navigate to the second page
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => LoginPage()),
